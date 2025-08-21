@@ -1,5 +1,5 @@
 // 后端接口前缀（根据实际环境调整）
-const API_PREFIX = "/springboot1/server/device/";
+const API_PREFIX = "/device/";
 // 自动刷新间隔（毫秒）
 const REFRESH_INTERVAL = 1000;
 // 存储当前通道状态信息（用于离线判断）
