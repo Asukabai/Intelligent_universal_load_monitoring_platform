@@ -1,0 +1,51 @@
+172.18.104.149
+16861
+
+设置电流：
+{"reqID":15,"sender":"8888","sendee":"dev_id","method":"set_dianliu","reqData":{"channel":1,"enable":1}}
+channel 为1-4
+enable 为0`6000,单位是mA
+
+输出开启：
+{"reqID":15,"sender":"8888","sendee":"dev_id","method":"set_shuchu","reqData":{"channel":1,"enable":1}}
+channel 为1-4
+enable 为1
+
+输出关闭：
+{"reqID":15,"sender":"8888","sendee":"dev_id","method":"set_shuchu","reqData":{"channel":1,"enable":0}}
+channel 为1-4
+enable 为0
+
+使能开启：
+{"reqID":15,"sender":"8888","sendee":"dev_id","method":"set_shineng","reqData":{"channel":1,"enable":1}}
+channel 为1-4
+enable 为1
+
+
+使能关闭：
+{"reqID":15,"sender":"8888","sendee":"dev_id","method":"set_shineng","reqData":{"channel":1,"enable":0}}
+channel 为1-4
+enable 为0
+
+获取状态
+{"reqID":15,"sender":"8888","sendee":"dev_id","method":"get_state_ch","reqData":{"channel":1}}
+channel 为1-4
+
+
+ "{\"reqID\":1,\"sender\":\"8888\",\"sendee\":\"dev_id\",\"method\":\"get_state_ch\",\"reqData\":{\"channel\":" + channel + "}}"+"\r\n";
+
+
+//设置电流
+    @Override
+    public String set_dianliu(ReqData reqData) {
+        String cmd="{\"reqID\":1,\"sender\":\"8888\",\"sendee\":\"dev_id\",\"method\":\"set_dianliu\",\"reqData\":{\"channel\":" + reqData.getChannel() + ",\"enable\":"+reqData.getEnable()+"}}"+"\r\n";
+        int boardId = deviceConfig.getBoardIdByChannel(reqData.getChannel());
+        return socketUtil.sendCommand(boardId, cmd);
+    }
+
+
+ //设置
+    @PostMapping("/set_dianliu")
+    public String setCurrent(@RequestBody ReqData reqData) {
+        return deviceService.set_dianliu(reqData);
+    }
