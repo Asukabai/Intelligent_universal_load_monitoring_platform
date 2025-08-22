@@ -18,6 +18,12 @@
 
 <img width="1266" height="478" alt="image" src="https://github.com/user-attachments/assets/e32e816c-64f8-4e92-ba6f-db1d3c3da0cf" />
 
+## 说明
+
+当使用串口通信的时候，直接调用串口通信工具类(IT69360PowerController.java) 即可,值得注意的是，不同的设备，驱动协议各不相同，无法做到完全通用。
+<img width="594" height="198" alt="59d0d8d0-0e88-447d-bf3a-dfa993e164b7" src="https://github.com/user-attachments/assets/d6c177ed-bca8-4902-9df2-299d1707d4df" />
+
+
 
 
 
