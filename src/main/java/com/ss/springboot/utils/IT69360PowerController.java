@@ -152,7 +152,6 @@ public class IT69360PowerController {
                 return response.trim();
             }
             return "";
-
         } catch (SerialPortException e) {
             throw new IOException("发送命令时发生错误: " + e.getMessage(), e);
         } catch (InterruptedException e) {

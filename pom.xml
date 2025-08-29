@@ -68,6 +68,8 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <!-- JSSC（Java Simple Serial Connector）
+        这是一个现代化的串口通信库，更容易管理：-->
         <dependency>
             <groupId>org.scream3r</groupId>
             <artifactId>jssc</artifactId>

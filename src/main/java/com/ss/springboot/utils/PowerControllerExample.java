@@ -6,9 +6,7 @@ public class PowerControllerExample {
         IT69360PowerController controller = new IT69360PowerController("COM3", 9600);
         
         try {
-
             System.out.println("尝试连接到串口: " + controller.checkPortStatus());
-
             // 连接设备
             if (controller.connect()) {
                 System.out.println("成功连接到电源设备");
